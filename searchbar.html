@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <style>
+        td {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            font-size: 100px;
+        }
+
+        #one {
+            background-color: pink;
+        }
+
+        #two {
+            background-color: rgb(245, 192, 255);
+        }
+
+        #three {
+            background-color: yellow;
+        }
+
+        #four {
+            background-color: springgreen;
+        }
+
+        #five {
+            background-color: slateblue;
+        }
+
+        #six {
+            background-color: brown;
+        }
+
+        #seven {
+            background-color: lightgreen;
+        }
+
+        #eight {
+            background-color: red;
+        }
+
+        #nine {
+            background-color: lightsalmon;
+        }
+
+        #ten {
+            background-color: lemonchiffon;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My search Bar</h1>
+    <input id="search" type="search" placeholder="Enter your key word "></input>
+    <table border="2">
+        <thead>
+            <tr>
+                <h1>MY PRODUCTS</h1>
+            </tr>
+
+        </thead>
+        <tbody id="myfirsttable">
+            <tr>
+                <td id="one">1</td>
+                <td id="two">2</td>
+            </tr>
+            <tr>
+                <td id="three">3</td>
+                <td id="four">4</td>
+            </tr>
+            <tr>
+                <td id="five">5</td>
+                <td id="six">6</td>
+            </tr>
+            <tr>
+                <td id="seven">7</td>
+                <td id="eight">8</td>
+            </tr>
+            <tr>
+                <td id="nine">9</td>
+                <td id="ten">10</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#search").keyup(function () {
+                var variable = $('#search').val();
+                $("#myfirsttable td").filter(function () {
+                    $(this).toggle($(this).text().indexOf(variable) > -1);
+                });
+
+            });
+
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
